@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 
 # Load the saved model
-model = load_model('Model/LSTMm1.keras')
+model = load_model('Model/LSTMm1.h5')
 
 # Load tokenizer and max sequence length
 with open('Model/tokenizer.pkl', 'rb') as handle:
