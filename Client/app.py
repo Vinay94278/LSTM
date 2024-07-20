@@ -6,11 +6,11 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 
 # Load the saved model
-model1 = load_model('Model/LSTMm1.keras')
+model = load_model('Model/LSTMm1.keras')
 
 # Load tokenizer and max sequence length
 with open('Model/tokenizer.pkl', 'rb') as handle:
-    tokenizer1 = pickle.load(handle)
+    tokenizer = pickle.load(handle)
 
 def predict_next_word(model, input_text, tokenizer, max_sequence_len , upto):
     for i in range(upto):
@@ -28,8 +28,6 @@ upto = st.number_input('Enter the number of future predictions', min_value=1, ma
 st.write("**Description:** This model is trained on professional email sentences such as 'I hope this email finds you well' and 'Thank you for your prompt response'. It generates phrases and completions suitable for professional communication.")
 st.write("**Dataset Link:** https://www.kaggle.com/datasets/shorya22/next-word-predictor-dataset-nlp-task")
 
-model = model1
-tokenizer = tokenizer1
 max_sequence_len = 21
 
 if st.button("Predict Next Words"):
